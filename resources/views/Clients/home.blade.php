@@ -22,9 +22,10 @@
         </div>
     @endif
 
-    <!-- Botão para adicionar novo cliente -->
+    <!-- Botões de navegação -->
     <div class="mb-3">
         <a class="btn btn-primary" href="{{ route('newClient') }}">Adicionar Cliente</a>
+        <a class="btn btn-secondary" href="{{ route('home') }}">Home</a>
     </div>
 
     <table id="example" class="hover" style="width:100%">
@@ -66,8 +67,9 @@
 
 @section('js')
 
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"> </script>
-<script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.js"> </script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
     $(document).ready(function() {

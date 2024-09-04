@@ -1,66 +1,125 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Gerenciador Projetos Energia Solar
 
-## About Laravel
+Esta aplicação Laravel é um sistema para gerenciar projetos e clientes. Permite a criação, edição, listagem e visualização de detalhes de projetos e clientes, além de gerenciar os equipamentos associados aos projetos.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Requisitos
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- PHP >= 8.0
+- Laravel >= 11.x
+- Composer
+- Banco de Dados: MySQL
+- Servidor Web: Apache ou Nginx
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## Instalação
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+ git clone https://github.com/juhlio/testequalityway
 
-### Premium Partners
+```bash
+  cd testequalityway
+  composer install
+  
+  php artisan serve
+ 
+```
+ A aplicação estará disponível em http://localhost:8000.
+    
+## Estrutura
+### Estrutura da Aplicação
+Diretórios Principais
+- app/: Contém o código da aplicação, incluindo Controllers, Models, e Services.
+- resources/views/: Contém os arquivos Blade para as views da aplicação.
+- routes/: Contém os arquivos de rotas.
+- public/: Contém os arquivos públicos, como imagens e scripts.
+- config/: Contém os arquivos de configuração da aplicação.
+- database/: Contém migrations, seeders e o banco de dados SQLite (se utilizado).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Funcionalidades
+#### Gerenciamento de Projetos
+- Criar Projeto: Permite adicionar novos projetos à aplicação.
+- Editar Projeto: Permite modificar as informações de projetos existentes.
+- Listar Projetos: Exibe uma lista de projetos com detalhes básicos.
+- Visualizar Projeto: Mostra informações detalhadas sobre um projeto específico.
 
-## Contributing
+#### Gerenciamento de Clientes
+- Adicionar Cliente: Permite criar novos clientes.
+- Editar Cliente: Permite modificar as informações de clientes existentes.
+- Listar Clientes: Exibe uma lista de clientes com detalhes básicos.
+- Visualizar Cliente: Mostra informações detalhadas sobre um cliente específico.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Gerenciamento de Equipamentos
+- Adicionar Equipamento: Permite adicionar equipamentos aos projetos.
+- Editar Equipamento: Permite modificar os detalhes dos equipamentos associados aos projetos.
 
-## Code of Conduct
+### Estrutura das Rotas
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Rotas da Web
 
-## Security Vulnerabilities
+#### Clientes
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **`GET /clientes`**: Listar todos os clientes
+- **`GET /clientes/novo`**: Exibir formulário para criar um novo cliente
+- **`POST /cliente/novo`**: Criar um novo cliente
+- **`GET /clientes/{id}`**: Exibir detalhes de um cliente específico
+- **`GET /cliente/{id}/editar`**: Exibir formulário para editar um cliente existente
+- **`PUT /cliente/{id}/editar`**: Atualizar um cliente existente
+- **`DELETE /cliente/{id}/delete`**: Deletar um cliente
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### Projetos
+- **`GET /projetos`**: Listar todos os projetos
+- **`GET /projetos/novo`**: Exibir formulário para criar um novo projeto
+- **`POST /projetos/novo`**: Criar um novo projeto
+- **`GET /projetos/{id}`**: Exibir detalhes de um projeto específico
+- **`GET /projetos/{id}/editar`**: Exibir formulário para editar um projeto existente
+- **`PUT /projetos/{id}/editar`**: Atualizar um projeto existente
+- **`DELETE /projetos/{id}/delete`**: Deletar um projeto
+
+### Rotas da API
+
+- **` GET /clients`**: Exibe todos clientes em formato json. Usado para o autocompletar do formulário de projetos.
+
+## Controllers
+
+### `HomeController`
+
+Gerencia a exibição da Home. Chamando a view principal.
+
+- **`index`**: Chama a view com a página principal.
+
+### `ClientController`
+
+
+Gerencia as operações CRUD (Create, Read, Update, Delete) para clientes e exibe as páginas de visualização e edição.
+
+- **`index`**: Chama a view que lista  todos os clientes.
+- **`newClient`**: Chama a view que cria um novo cliente.
+- **`store`**: Salva um novo cliente.
+- **`getClient`**: Chama a view que exibe os detalhes de um cliente especifico.
+-  **`edit`**: Chama a view com formulário de edição de clientes.
+- **`update`**: Processa a alteração de um cliente.
+- **`destroy`**: Exclui um cliente.
+- **`getApiClients`**: Exibe os clientes em formato json.
+
+
+### `ProjectsController`
+
+
+Gerencia as operações CRUD (Create, Read, Update, Delete) para projetos e exibe as páginas de visualização e edição.
+
+- **`index`**: Chama a view que lista  todos os projetos.
+- **`newProject`**: Chama a view que cria um novo projeto.
+- **`store`**: Salva um novo projeto.
+- **`getProject`**: Chama a view que exibe os detalhes de um projeto especifico.
+-  **`edit`**: Chama a view com formulário de edição de projetos.
+- **`update`**: Processa a alteração de um cliprojetoente.
+- **`destroy`**: Exclui um projeto.
+## Autores
+
+- [@Julio](https://www.github.com/juhlio)
+

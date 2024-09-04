@@ -34,7 +34,7 @@
                             <h4 class="card-title">Informações do Projeto</h4>
                         </div>
                         <div class="card-body">
-                            <p><strong>ID do Projeto:</strong> {{ $project->id }}</p>
+                            <p><strong>ID do Projeto:</strong> {{ $project->project_id }}</p>
                             <p><strong>Tipo de Instalação:</strong> {{ $project->instalationType }}</p>
                         </div>
                     </div>
@@ -67,9 +67,9 @@
             <!-- Botões de Ação -->
             <div class="d-flex justify-content-between">
                 <a href="{{ route('homeProjects') }}" class="btn btn-secondary">Voltar</a>
-                <a href="#" class="btn btn-warning">Editar</a>
+                <a href="{{route('editProject', $project->project_id)}}" class="btn btn-warning">Editar</a>
 
-                <form action="{{route('deleteProject', $project->id)}}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir este projeto?');">
+                <form action="{{route('deleteProject', $project->project_id)}}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir este projeto?');">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Excluir</button>

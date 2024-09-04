@@ -19,7 +19,7 @@
     <div class="col-md-4">
 
         <x-adminlte-small-box title="Projetos" text="Consulta aos nossos projetos"
-        theme="primary"  url="#"  />
+        theme="primary"  url="{{route('homeProjects')}}"  />
 
     </div>
 
