@@ -22,13 +22,31 @@ Esta aplicação Laravel é um sistema para gerenciar projetos e clientes. Permi
 
 ```bash
   cd testequalityway
-  composer install
-  
-  php artisan serve
- 
 ```
- A aplicação estará disponível em http://localhost:8000.
-    
+### Instalando as dependências  
+```  
+  composer install
+``` 
+### Configuração do ambiente
+Copie o arquivo .env.example para um novo arquivo .env e configure suas variáveis de ambiente:
+
+```
+cp .env.example .env
+```
+Edite o arquivo ```.env``` para configurar a conexão com o banco de dados e outras configurações necessárias.
+
+### Gerando a chave da aplicação
+
+Gere a chave de aplicação do Laravel:
+```
+php artisan key:generate
+```
+### Executando Migrations e Seeders
+
+Execute as migrations e seeders para configurar o banco de dados:
+```
+php artisan migrate --seed
+```
 ## Estrutura
 ### Estrutura da Aplicação
 Diretórios Principais
